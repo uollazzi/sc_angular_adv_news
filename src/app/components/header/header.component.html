@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/"><i class="bi bi-newspaper"></i></a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/news">News</a>
+        </li>
+      </ul>
+      <ng-container *ngIf="!authService.isUserLogged">
+        <a class="btn btn-primary me-2" routerLink="/login">Login</a>
+        <a class="btn btn-warning">Register</a>
+      </ng-container>
+      <ng-container *ngIf="authService.isUserLogged">
+        <button type="button" class="btn btn-danger" (click)="authService.logout()">Logout</button>
+      </ng-container>
+    </div>
+  </div>
+</nav>
