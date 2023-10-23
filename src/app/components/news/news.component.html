@@ -1,8 +1,8 @@
 <div class="mb-3">
-  <input type="text" class="form-control" [(ngModel)]="keywords">
+  <input type="text" class="form-control" name="keywords" [(ngModel)]="keywords">
 </div>
 <div class="mb-3">
-  <select class="form-select" [(ngModel)]="searchIn">
+  <select class="form-select" name="searchIn" [(ngModel)]="searchIn">
     <option *ngFor="let o of searchInOptions" [value]="o">{{o}}</option>
   </select>
   <!-- <select class="form-select" [(ngModel)]="searchIn">
